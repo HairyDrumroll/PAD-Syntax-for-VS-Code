@@ -31,4 +31,6 @@ Notes:
 - Fixes and improvements welcome. Open a PR with focused changes to `syntaxes/` or `language-configuration.json`.
 
 ## License
-This repository does not include a license file. Add one if you plan to publish.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This is a permissive open-source license that allows you to use, modify, and distribute the software freely, with minimal restrictions.
