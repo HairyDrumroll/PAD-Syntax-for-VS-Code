@@ -3,6 +3,10 @@
 
 Minimal TextMate grammar and language configuration for Power Automate Desktop files (`.robin`, `.pad`).
 
+This extension provides syntax highlighting and a small language configuration tailored for Power Automate Desktop (PAD) / Robin files. It recognizes and highlights core Robin/PAD constructs such as control keywords (IF/THEN/END, ON ERROR), region markers, labels, PAD action names (for example `Display.InputDialog`, `File.ReadTextFromFile.ReadText`), variables, numbers, and single/double/triple-quoted strings. It also supports comment styles, folding for region markers, and common operators (including the output operator `=>`).
+
+The grammar maps tokens to standard TextMate scopes so themes and other extensions can style PAD files consistently. It's designed to make it easy to paste or author PAD action steps inside VS Code and have them be readable, navigable, and theme-aware.
+
 ## Features
 - Highlights control keywords (`IF/THEN/END`, `ON ERROR`, etc.)
 - Labels (`LABEL foo`)
@@ -26,6 +30,9 @@ Minimal TextMate grammar and language configuration for Power Automate Desktop f
 Notes:
 - If a file is not using the Robin grammar, click the language mode indicator (bottom-right) and select **Robin** or add a file association in settings.
 - Folding markers (regions) must appear as plain lines (not commented) for folding to work.
+
+###What is Robin?
+[Robin](https://github.com/robin-language/robin) was a Softomotive Robotic Process Automation (RPA) product until it was [purchased by Microsoft in 2020](https://www.microsoft.com/en-us/power-platform/blog/2020/05/19/microsoft-acquires-softomotive-to-expand-low-code-robotic-process-automation-capabilities-in-microsoft-power-automate/), where it has now been merged in to the [Microsoft Power Automate Desktop](https://learn.microsoft.com/en-us/power-automate/desktop-flows/introduction) product.
 
 ## Contributing
 - Fixes and improvements welcome. Open a PR with focused changes to `syntaxes/` or `language-configuration.json`.
