@@ -1,0 +1,142 @@
+{
+  "scopeName": "source.robin",
+  "name": "Robin",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#keywords_control" },
+    { "include": "#keywords_other" },
+    { "include": "#booleans" },
+    { "include": "#namespaces" },
+    { "include": "#special_markers" },
+    { "include": "#labels" },
+    { "include": "#variables" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.robin",
+          "match": "#(?!/).*" 
+        },
+        {
+          "name": "comment.block.robin",
+          "begin": "/#",
+          "end": "#/"
+        }
+      ]
+    },
+
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.triple.robin",
+          "begin": "\\$'''",
+          "end": "'''",
+          "applyEndPatternLast": true,
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape.robin" }
+          ]
+        },
+        {
+          "name": "string.quoted.single.robin",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape.robin" }
+          ]
+        },
+        {
+          "name": "string.quoted.double.robin",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape.robin" }
+          ]
+        }
+      ]
+    },
+
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.robin", "match": "\\b\\d+(?:\\.\\d+)?\\b" }
+      ]
+    },
+
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.assignment.robin",
+          "match": "=>"
+        },
+        {
+          "name": "keyword.operator.comparison.robin",
+          "match": "(?<![<>=!])(?:==|=|<>|<=|>=|<|>)(?![<>=])"
+        },
+        {
+          "name": "punctuation.separator.keyvalue.robin",
+          "match": ":"
+        }
+      ]
+    },
+
+    "keywords_control": {
+      "patterns": [
+        {
+          "name": "keyword.control.robin",
+          "match": "\\b(?:IF|THEN|ELSE|ELSE\\s+IF|END|SWITCH|CASE|DEFAULT|LOOP|WHILE|FOREACH|IN|NEXT|STEP|GOTO|RETURN|BREAK|CONTINUE|REPEAT|TIMES|WAIT|ON\\s+ERROR|ON\\s+BLOCK|BLOCK|THROW|FUNCTION|EXIT|CALL|SET|AND|TO|FROM)\\b"
+        },
+        {
+          "name": "keyword.region.robin",
+          "match": "(?i)(?:\\*\\*REGION\\b|\\*\\*ENDREGION\\b)"
+        }
+      ]
+    },
+
+    "keywords_other": {
+      "patterns": [
+        { "name": "keyword.other.disable.robin", "match": "\\bDISABLE\\b" },
+        { "name": "storage.type.label.robin", "match": "\\bLABEL\\b" }
+      ]
+    },
+
+    "booleans": {
+      "patterns": [
+        { "name": "constant.language.boolean.robin", "match": "\\b(?:True|False)\\b" }
+      ]
+    },
+
+    "namespaces": {
+      "patterns": [
+        {
+          "name": "support.function.action.robin",
+          "match": "(?:\\(?)(?:Display|Database|File|Web|WebAutomation|Variables|System|Text|Email|External|Workstation|Scripting|Folder|Compression|UIAutomation|FlowControl|Excel|Word|Access|Exchange|Outlook|MouseAndKeyboard|Clipboard|DateTime|Pdf|Cmd|TerminalEmulation|OCR|Cryptography|Services|XML|FTP|CyberArk|ActiveDirectory|AWS|Azure|GoogleCognitive|IBMCognitive|MicrosoftCognitive|SAP|Testing)\\.(?=[A-Za-z])"
+        },
+        {
+          "name": "support.function.action.full.robin",
+          "match": "\\b(?:Display|Database|File|Web|WebAutomation|Variables|System|Text|Email|External|Workstation|Scripting|Folder|Compression|UIAutomation|FlowControl|Excel|Word|Access|Exchange|Outlook|MouseAndKeyboard|Clipboard|DateTime|Pdf|Cmd|TerminalEmulation|OCR|Cryptography|Services|XML|FTP|CyberArk|ActiveDirectory|AWS|Azure|GoogleCognitive|IBMCognitive|MicrosoftCognitive|SAP|Testing)(?:\\.[A-Za-z0-9_]+)+\\b"
+        }
+      ]
+    },
+
+    "special_markers": {
+      "patterns": [
+        { "name": "constant.other.marker.robin", "match": "@@" }
+      ]
+    },
+
+    "labels": {
+      "patterns": [
+        { "name": "entity.name.label.robin", "match": "^\\s*(?i:LABEL)\\s+\\w+" }
+      ]
+    },
+
+    "variables": {
+      "patterns": [
+        { "name": "variable.other.readwrite.robin", "match": "\\b\\w+\\b(?=\\s*(?:=>|:))" }
+      ]
+    }
+  }
+}
