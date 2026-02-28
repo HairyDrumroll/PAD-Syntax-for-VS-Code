@@ -4,6 +4,11 @@
   "description": "Syntax highlighting and folding for Power Automate Desktop (.robin or .pad) files",
   "version": "0.0.1",
   "publisher": "HairyDrumroll",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HairyDrumroll/PAD-Syntax-for-VS-Code.git"
+  },
   "license": "MIT",
   "engines": {
     "vscode": "^1.80.0"
@@ -25,5 +30,7 @@
         "path": "./syntaxes/robin.tmLanguage.json"
       }
     ]
-  }
+  },
+  "scripts": {"package": "npx vsce package", "publish": "npx vsce publish"},
+  "devDependencies": {"vsce":"2.0.0"}
 }
